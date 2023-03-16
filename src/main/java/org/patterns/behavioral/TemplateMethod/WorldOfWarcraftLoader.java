@@ -1,6 +1,6 @@
 package org.patterns.behavioral.TemplateMethod;
 
-public class WorldOfWarcraftLoader extends BaseGameLoader {
+public class WorldOfWarcraftLoader extends GameLoaderTemplate {
     @Override
     public byte[] loadLocalData() {
         System.out.println( "Loading local WoW files..." );

@@ -1,19 +1,26 @@
 package org.patterns.behavioral.ChainOfResponsibility.handler;
 
-public abstract class Handler {
-    private Handler next;
+import org.patterns.behavioral.ChainOfResponsibility.Product;
 
-    public Handler setNextHandler( Handler next ) {
-        this.next = next;
-        return next;
+import java.util.Optional;
+import java.util.function.Function;
+
+public abstract class Tester {
+    private Tester nextTester;
+
+    public abstract boolean validate( Product product );
+
+    protected boolean nextValidationFor( Product product ) {
+        return Optional.ofNullable( nextTester )
+                       .map( validateFor( product ) )
+                       .orElse( true );
     }
 
-    public abstract boolean handle( String username, String password );
+    public void setNextTester( Tester nextTester ) {
+        this.nextTester = nextTester;
+    }
 
-    protected boolean handleNext( String username, String password ) {
-        if ( next == null ) {
-            return true;
-        }
-        return next.handle( username, password );
+    private static Function<Tester, Boolean> validateFor( Product product ) {
+        return tester -> tester.validate( product );
     }
 }

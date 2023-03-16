@@ -2,10 +2,10 @@ package org.patterns.behavioral.ChainOfResponsibility;
 
 import org.patterns.behavioral.ChainOfResponsibility.handler.Tester;
 
-public class TestQuality {
+public class ProductTest {
     private Tester tester;
 
-    public TestQuality( Tester tester ) {
+    public ProductTest( Tester tester ) {
         this.tester = tester;
     }
 

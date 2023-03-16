@@ -1,6 +1,6 @@
 package org.patterns.behavioral.Strategy.strategy;
 
-public class PayPal implements PaymentStrategy {
+public class PayPalPayment implements PaymentStrategy {
     private String email;
     private String password;
 

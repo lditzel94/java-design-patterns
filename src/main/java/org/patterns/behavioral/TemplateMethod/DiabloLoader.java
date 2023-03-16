@@ -1,6 +1,6 @@
 package org.patterns.behavioral.TemplateMethod;
 
-public class DiabloLoader extends BaseGameLoader {
+public class DiabloLoader extends GameLoaderTemplate {
     @Override
     public byte[] loadLocalData() {
         System.out.println( "Loading Diablo files..." );

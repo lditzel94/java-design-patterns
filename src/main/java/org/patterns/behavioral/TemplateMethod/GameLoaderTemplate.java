@@ -1,6 +1,6 @@
 package org.patterns.behavioral.TemplateMethod;
 
-public abstract class BaseGameLoader {
+public abstract class GameLoaderTemplate {
     public void load() {
         byte[] data = loadLocalData();
         createObjects( data );

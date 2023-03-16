@@ -1,4 +1,6 @@
-package org.patterns.creational.FactoryMethod;
+package org.patterns.creational.FactoryMethod.factory;
+
+import org.patterns.creational.FactoryMethod.domain.Burger;
 
 public abstract class Restaurant {
     public void orderBurger() {

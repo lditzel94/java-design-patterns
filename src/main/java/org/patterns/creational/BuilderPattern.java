@@ -1,11 +1,11 @@
 package org.patterns.creational;
 
-public class BuilderExample {
+public class BuilderPattern {
     private String name;
     private String description;
     private String date;
 
-    public BuilderExample( String name, String description, String date ) {
+    public BuilderPattern( String name, String description, String date ) {
         this.name = name;
         this.description = description;
         this.date = date;
@@ -20,7 +20,26 @@ public class BuilderExample {
         private String description;
         private String date;
 
-        public Builder() {
+        Builder() {
+        }
+
+        public Builder name( String name ) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder description( String description ) {
+            this.description = description;
+            return this;
+        }
+
+        public Builder date( String date ) {
+            this.date = date;
+            return this;
+        }
+
+        public BuilderPattern build() {
+            return new BuilderPattern( name, description, date );
         }
     }
 }
